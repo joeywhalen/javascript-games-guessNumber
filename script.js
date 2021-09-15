@@ -15,7 +15,7 @@ document.querySelector('.check').addEventListener('click', function () {
     if (!guess) {
         displayMessage('⛔️ No number!');
     
-        // When player wins
+      // When player wins
     } else if (guess === secretNumber) {
         displayMessage('🎉 Correct Number!');
         document.querySelector('.number').textContent = secretNumber;
@@ -26,7 +26,7 @@ document.querySelector('.check').addEventListener('click', function () {
             highScore = score;
             document.querySelector('.highscore').textContent = highScore;
         }
-        // When guess is wrong
+      // When guess is wrong
     } else if (guess !== secretNumber) {
         if (score > 1) {
             displayMessage(guess > secretNumber ? '📈 Too high!' : '📉 Too low!');
@@ -39,6 +39,7 @@ document.querySelector('.check').addEventListener('click', function () {
     }
     });
 
+// Reset the game while retaining the high score
 document.querySelector('.again').addEventListener('click', function () {
     score = 20;
     secretNumber = Math.trunc(Math.random() * 20) + 1;
